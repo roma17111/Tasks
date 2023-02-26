@@ -1,5 +1,6 @@
 package org.example;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -9,7 +10,7 @@ import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        getTask2();
+        getTask3();
     }
 
     public static void getTask1() {
@@ -22,9 +23,31 @@ public class Main {
 
     public static void getTask2() {
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-       int[] numbersReverse =  IntStream.rangeClosed(1, numbers.length)
+        int[] numbersReverse = IntStream.rangeClosed(1, numbers.length)
                 .map(i -> numbers[numbers.length - i])
                 .toArray();
         System.out.println(Arrays.toString(numbersReverse));
+    }
+
+    public static void getTask3() {
+        try {
+            while (true) {
+                String s = JOptionPane.showInputDialog(null, "Введите строку");
+                StringBuilder s1 = new StringBuilder(s).reverse();
+                if (s.equalsIgnoreCase("")) {
+                    throw new RuntimeException();
+                }
+                if (s.equalsIgnoreCase(String.valueOf(s1))) {
+                    JOptionPane.showMessageDialog(null, "Строка - палиндром");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Строка - не палиндром");
+                }
+            }
+        } catch (NullPointerException e) {
+            System.exit(0);
+        } catch (RuntimeException t) {
+            JOptionPane.showMessageDialog(null, "Введите строку!!!");
+            getTask3();
+        }
     }
 }
