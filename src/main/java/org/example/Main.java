@@ -4,17 +4,14 @@ import org.example.task9.TestException;
 
 import javax.swing.*;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        task11();
+        task12();
 
     }
 
@@ -80,5 +77,15 @@ public class Main {
                 .collect(Collectors.joining());
         System.out.println(s);
         //Изи
+    }
+
+    public static void task12() {
+        Map<String, String> books = new HashMap<>();
+        books.put("Война и мир", "Лев Николаевич Толстой");
+        books.put("Капитанская дочка", "Александр Сергеевич Пушкин");
+        books.put("Преступление и наказание", "Фёдор Михайлович Достоевский");
+        books.entrySet().stream()
+                .map(book->"«Название книги»  " +book.getKey()+" И. О. Фамилия автора. " +book.getValue())
+                .forEach(System.out::println);
     }
 }
