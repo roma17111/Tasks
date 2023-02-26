@@ -8,12 +8,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        TestException.catchEx();
+        task11();
 
     }
 
@@ -70,5 +71,14 @@ public class Main {
         } catch (NullPointerException e) {
         } catch (RuntimeException e) {
         }
+    }
+
+    public static void task11() {
+        String[] strings = {"папа", "кошка", "дом", "кошка", "папа","собака", "кобель", "сука"};
+        String s = Arrays.stream(strings)
+                .distinct()
+                .collect(Collectors.joining());
+        System.out.println(s);
+        //Изи
     }
 }
