@@ -3,6 +3,7 @@ package org.example;
 import org.example.task9.TestException;
 
 import javax.swing.*;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -58,9 +59,16 @@ public class Main {
         String s = "Много бухла";
         String s1 = s.substring(0, s.length() / 2);
         String s2 = s.substring(s.length() / 2 + 1, s.length());
-        JOptionPane.showMessageDialog(null,"Первая половина строки - " + s1+"\n"
-        +"Вторая половина строки - " + s2 );
+        JOptionPane.showMessageDialog(null, "Первая половина строки - " + s1 + "\n"
+                + "Вторая половина строки - " + s2);
     }
 
-
+    public static void getTask10() {
+        try {
+            // Ваш код
+        } catch (IllegalArgumentException e)  {
+        } catch (NullPointerException e) {
+        } catch (RuntimeException e) {
+        }
+    }
 }
