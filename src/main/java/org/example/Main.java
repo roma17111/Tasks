@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        getTask3();
+
     }
 
     public static void getTask1() {
@@ -50,4 +50,14 @@ public class Main {
             getTask3();
         }
     }
+
+    public static void getTask4() {
+        String s = "Много бухла";
+        String s1 = s.substring(0, s.length() / 2);
+        String s2 = s.substring(s.length() / 2 + 1, s.length());
+        JOptionPane.showMessageDialog(null,"Первая половина строки - " + s1+"\n"
+        +"Вторая половина строки - " + s2 );
+    }
+
+
 }
