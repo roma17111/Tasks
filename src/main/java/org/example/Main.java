@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.task9.TestException;
+
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +12,7 @@ import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        Task7.catchException();
+        TestException.catchEx();
 
     }
 
